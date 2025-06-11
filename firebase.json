@@ -2,6 +2,16 @@
   "hosting": {
     "site": "p0rtf0li0-29e26",
     "public": "public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/html/**",
+        "destination": "/html/index.html"
+      }
+    ]
   }
 }
