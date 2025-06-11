@@ -27,12 +27,11 @@ app.use('/lib', express.static(path.join(__dirname, 'lib')));
 app.use(express.static(process.cwd()));
 app.use(express.static(path.join(__dirname, 'html')));
 // Serve HTML routes
-app.get('/', (req, res) => res.sendFile(`${process.cwd()}/html/index.html`));
-app.get('/home', (req, res) => res.sendFile(`${process.cwd()}/html/home.html`));
-app.get('/gallery', (req, res) => res.sendFile(`${process.cwd()}/html/gallery.html`));
-app.get('/hoopalong', (req, res) => res.sendFile(`${process.cwd()}/html/hoopalong.html`));
-app.get('/offer', (req, res) => res.sendFile(`${process.cwd()}/html/offer.html`));
-app.get('/skills', (req, res) => res.sendFile(`${process.cwd()}/html/skills.html`));
+const htmlRoutes = ['/', '/home', '/gallery', '/hoopalong', '/offer', '/skills'];
+htmlRoutes.forEach((route) => {
+  const page = route === '/' ? 'index' : route.substring(1);
+  app.get(route, (req, res) => res.sendFile(path.join(__dirname, 'html', `${page}.html`)));
+}); 
 wss.on('connection', (ws) => {
   funkyConsoleLog('Client connected', ['yellow']);
   ws.on('close', () => funkyConsoleLog('Client disconnected', ['yellow']));
@@ -47,9 +46,15 @@ app.get('/firebase-config', (req, res) => {
     appId: process.env.FIREBASE_APP_ID,
   });
 });
-server.listen(7410, () => {
+
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+});
+const PORT = process.env.PORT || 7410;
+
+server.listen(PORT, () => {
   console.clear();
   startAsciiAnimation();
   funkyConsoleLog('🍩 Donuts are ready to serve! 🍩', ['pink', 'green']);
-  console.log('Server running on http://localhost:7410');
+  console.log(`Server running on http://localhost:${PORT}`);
 });
