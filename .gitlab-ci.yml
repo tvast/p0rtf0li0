@@ -1,0 +1,12 @@
+stages:
+  - deploy
+
+deploy_to_firebase:
+  image: node:20
+  stage: deploy
+  only:
+    - main  # or your deployment branch
+  script:
+    - npm install -g firebase-tools
+    - firebase --version
+    - firebase deploy --token "$FIREBASE_TOKEN"
