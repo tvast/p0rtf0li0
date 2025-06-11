@@ -1,0 +1,41 @@
+{
+  "gallery": {
+    "title": "Galerie Foldscroll d'art",
+    "imageCount": 10,
+    "imagePathTemplate": "./art/{index}.jpg",
+    "items": [
+      {
+        "index": 1,
+        "title": "Nom de l'événement 1",
+        "description": "Description de l'événement 1",
+        "buttons": [
+          { "label": "Réserver", "class": "button" },
+          { "label": "Acheter", "class": "button2" }
+        ]
+      },
+      {
+        "index": 2,
+        "title": "Nom de l'événement 2",
+        "description": "Description de l'événement 2",
+        "buttons": [
+          { "label": "Réserver", "class": "button" },
+          { "label": "Acheter", "class": "button2" }
+        ]
+      },
+      {
+        "index": 3,
+        "title": "Nom de l'événement 3",
+        "description": "Description de l'événement 3",
+        "buttons": [
+          { "label": "Réserver", "class": "button" },
+          { "label": "Acheter", "class": "button2" }
+        ]
+      }
+    ],
+    "foldScrollOptions": {
+      "perspective": 900,
+      "shading": "rgba(0,0,0,0.2)",
+      "margin": 0.6
+    }
+  }
+}

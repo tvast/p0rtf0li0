@@ -1,0 +1,17 @@
+{
+  "name": "cr1bl3",
+  "version": "1.2.4",
+  "description": "a lightweight frontend framework with dynamic auto import components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "theophile vast",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.169.0"
+  }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Portfolio</title>
+  <style>
+    .card-custom {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      padding: 2rem;
+      color: white;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .foo2 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .foo3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .page-section {
+      padding: 3rem 1rem;
+    }
+
+    .bg-info {
+      background-color: #17a2b8 !important;
+    }
+
+    .divider {
+      width: 60px;
+      height: 4px;
+      background: white;
+      margin: 1rem auto;
+    }
+  </style>
+   <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+    <nav style="display: flex; gap: 1rem; padding: 1rem; background: #222; color: white;">
+  <a href="index.html" style="color: white;">Index</a>
+  <a href="home.html" style="color: white;">Home</a>
+  <a href="offer.html" style="color: white;">Offer</a>
+  <a href="gallery.html" style="color: white;">Gallery</a>
+  <a href="hoopalong.html" style="color: white;">Hoopalong</a>
+</nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="card-custom" style="background-image: url('https://images.unsplash.com/photo-1576836165612-8bc9b07e7778?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80')">
+          <div class="overlay">
+            <h1>Fullstack specialist, talk from robot to human</h1>
+            <p>
+              Discover my project on this website. I work with Node, Vue js, Elastic search, Mongo db,
+              Vanilla Javascript and many other cool stuff
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card-custom" style="background-image: url('https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80')">
+          <div class="overlay">
+            <h1>The best user interface is made for human</h1>
+            <p>
+              I'm a huge fan of Google material design guideline. And I apply those principles on every project
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card-custom" style="background-image: url('https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1700&q=80')">
+          <div class="overlay">
+            <h1>I build website that blow your (human) mind</h1>
+            <p>Just take a look at my portfolio</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Responsive Desktop/Tablet Message -->
+  <section class="page-section bg-info white-text center">
+    <h2 class="foo2">This website is optimized for desktop experience</h2>
+    <div class="divider"></div>
+    <p>You can find some key information here</p>
+  </section>
+
+  <!-- Services -->
+  <section class="page-section center">
+    <h1 class="foo3">I tailor well crafted website</h1>
+    <h5 class="foo3">with the best UX/UI</h5>
+    <div class="row">
+      <div class="col s12 m4">
+        <img src="https://img.icons8.com/nolan/64/web.png" />
+        <h4 class="foo3">Front end specialist</h4>
+      </div>
+      <div class="col s12 m4">
+        <img src="https://img.icons8.com/dusk/64/000000/developer.png" />
+        <h4 class="foo3">Fullstack experience</h4>
+      </div>
+      <div class="col s12 m4">
+        <img src="https://img.icons8.com/nolan/64/repository.png" />
+        <h4 class="foo3">Agile knowledge</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="page-section bg-info white-text center">
+    <h2 class="foo2 mb-4">Go to my GitHub</h2>
+    <a class="btn white black-text" href="https://github.com/tvast">Browse now</a>
+  </section>
+
+  <!-- Contact -->
+  <section class="page-section center">
+    <h2 class="foo2">Let's Get In Touch!</h2>
+    <div class="divider"></div>
+    <p>Ready to start your next project with us? Send an email and we’ll get back to you!</p>
+    <a href="mailto:theophile.vast@gmail.com">Contact Théophile Vast</a>
+  </section>
+
+</body>
+</html> 
