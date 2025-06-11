@@ -5,7 +5,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import startAsciiAnimation from './lib/@cr1bl3-cli/animate.js';
 import { funkyConsoleLog } from './lib/@cr1bl3-cli/funkyConsoleLog.js';
-require('dotenv').config();
+import dotenv from 'dotenv';
+
+dotenv.config();
 const app = express();
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
