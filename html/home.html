@@ -5,46 +5,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Developer Portfolio</title>
   <style>
-    .card-custom {
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      padding: 2rem;
-      color: white;
-      border-radius: 10px;
-      margin-bottom: 2rem;
-    }
+    /* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 2rem;
-      border-radius: 10px;
-    }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #111;
+  color: #fff;
+  line-height: 1.6;
+}
 
-    .foo2 {
-      font-size: 2rem;
-      font-weight: bold;
-    }
+/* Navigation */
+nav {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: #1c1c1c;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
 
-    .foo3 {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
 
-    .page-section {
-      padding: 3rem 1rem;
-    }
+nav a:hover {
+  color: #17a2b8;
+}
 
-    .bg-info {
-      background-color: #17a2b8 !important;
-    }
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
 
-    .divider {
-      width: 60px;
-      height: 4px;
-      background: white;
-      margin: 1rem auto;
-    }
+/* Card Custom */
+.card-custom {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.overlay h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.overlay p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Typography */
+.foo2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: white;
+}
+
+.foo3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* Sections */
+.page-section {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.bg-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.divider {
+  width: 60px;
+  height: 4px;
+  background: white;
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+/* Button */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  background: #fff;
+  color: #000;
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Icons */
+img {
+  margin: 1rem 0;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
   </style>
    <link rel="stylesheet" href="index.css" />
 </head>

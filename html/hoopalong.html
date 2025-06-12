@@ -4,112 +4,142 @@
     <meta charset="UTF-8" />
     <title>Hooplong Audio Visualizer</title>
     <style>
-     html, body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  height: 100%;
-}
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+      }
 
-canvas {
-  background: black;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+      canvas {
+        background: black;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
 
-.center {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  text-align: center;
-}
+      .center {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        text-align: center;
+      }
 
-button.btn-11 {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  height: 80px;
-  max-width: 250px;
-  margin: 0 auto;
-  text-transform: uppercase;
-  border: 1px solid currentColor;
-  cursor: pointer;
-  line-height: 80px;
-  font-family: sans-serif;
-  font-size: 18px;
-  color: #7b8ebd;
-  background: transparent;
-  z-index: 2;
-}
+      button.btn-11 {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        height: 80px;
+        max-width: 250px;
+        margin: 0 auto;
+        text-transform: uppercase;
+        border: 1px solid currentColor;
+        cursor: pointer;
+        line-height: 80px;
+        font-family: sans-serif;
+        font-size: 18px;
+        color: #7b8ebd;
+        background: transparent;
+        z-index: 2;
+      }
 
-.btn-11:before,
-.btn-11:after {
-  position: absolute;
-  top: 50%;
-  content: "";
-  width: 20px;
-  height: 20px;
-  background-color: #647ab1;
-  border-radius: 50%;
-}
+      .btn-11:before,
+      .btn-11:after {
+        position: absolute;
+        top: 50%;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-color: #647ab1;
+        border-radius: 50%;
+      }
 
-.btn-11:before {
-  left: -20px;
-  transform: translate(-50%, -50%);
-}
+      .btn-11:before {
+        left: -20px;
+        transform: translate(-50%, -50%);
+      }
 
-.btn-11:after {
-  right: -20px;
-  transform: translate(50%, -50%);
-}
+      .btn-11:after {
+        right: -20px;
+        transform: translate(50%, -50%);
+      }
 
-.btn-11:hover {
-  color: #d8deec;
-}
+      .btn-11:hover {
+        color: #d8deec;
+      }
 
-.btn-11:hover:before {
-  animation: criss-cross-left 0.8s both alternate;
-}
+      .btn-11:hover:before {
+        animation: criss-cross-left 0.8s both alternate;
+      }
 
-.btn-11:hover:after {
-  animation: criss-cross-right 0.8s both alternate;
-}
+      .btn-11:hover:after {
+        animation: criss-cross-right 0.8s both alternate;
+      }
 
-@keyframes criss-cross-left {
-  0% { left: -20px; }
-  100% { left: 50%; }
-}
+      @keyframes criss-cross-left {
+        0% { left: -20px; }
+        100% { left: 50%; }
+      }
 
-@keyframes criss-cross-right {
-  0% { right: -20px; }
-  100% { right: 50%; }
-}
+      @keyframes criss-cross-right {
+        0% { right: -20px; }
+        100% { right: 50%; }
+      }
 
-nav {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem;
-  background: #222;
-  color: white;
-  z-index: 3;
-  position: relative;
-}
+      nav {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        background: #222;
+        color: white;
+        z-index: 3;
+        position: relative;
+      }
 
-nav a {
-  color: white;
-  text-decoration: none;
-}
+      nav a {
+        color: white;
+        text-decoration: none;
+      }
 
-/* Insert glitch animation keyframes and glitch-text class here */
+      .glitch-text {
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 3em;
+        font-family: monospace;
+        text-transform: uppercase;
+        animation: glitch 1s infinite;
+        z-index: 3;
+      }
+
+      @keyframes glitch {
+        0%, 100% {
+          clip-path: inset(0 0 0 0);
+          transform: translate(0);
+        }
+        25% {
+          clip-path: inset(20% 0 60% 0);
+          transform: translate(-3px, 1px);
+        }
+        50% {
+          clip-path: inset(40% 0 20% 0);
+          transform: translate(3px, -1px);
+        }
+        75% {
+          clip-path: inset(60% 0 20% 0);
+          transform: translate(-1px, 2px);
+        }
+      }
     </style>
   </head>
   <body>
-<h1 class="glitch-text" data-text="GLITCH EFFECT">GLITCH EFFECT</h1>
+    <h1 class="glitch-text" data-text="GLITCH EFFECT">GLITCH EFFECT</h1>
 
     <div class="center">
       <button id="playBtn" class="btn-11">Play</button>
@@ -122,40 +152,41 @@ nav a {
       <a href="gallery.html">Gallery</a>
       <a href="hoopalong.html">Hoopalong</a>
     </nav>
-    <audio id="myAudio" src="welcome.mp3" crossorigin="anonymous"></audio>
-    <canvas id="canvas"></canvas>
+
+    <<audio
+  id="myAudio"
+  src="https://firebasestorage.googleapis.com/v0/b/p0rtf0li0-29e26.appspot.com/o/welcome.mp3?alt=media&token=dc2a00eb-fc2f-40dc-8f1e-c1dfc1a8b55f"
+  crossorigin="anonymous"
+></audio>
+<canvas id="canvas"></canvas>
 
     <script>
       class AudioAnalyzer {
         constructor(audioContext, source, fftSize = 2048) {
-          this.audioContext = audioContext;
-          this.source = source;
-          this.fftSize = fftSize;
           this.analyser = audioContext.createAnalyser();
-          this.analyser.connect(audioContext.destination);
           this.analyser.fftSize = fftSize;
           this.bufferLength = this.analyser.frequencyBinCount;
           this.dataArray = new Uint8Array(this.bufferLength);
-          this.source.connect(this.analyser);
+
+          source.connect(this.analyser);
+          this.analyser.connect(audioContext.destination);
         }
 
-        getData() {
+        getFrequencyData() {
           this.analyser.getByteFrequencyData(this.dataArray);
           return this.dataArray;
         }
       }
 
-      const audio = document.getElementById("myAudio");
       const canvas = document.getElementById("canvas");
-      const playBtn = document.getElementById("playBtn");
       const ctx = canvas.getContext("2d");
-
-      let audioAnalyzer = null;
-      let audioCtx = null;
-      let isPlaying = false;
-
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+
+      const playBtn = document.getElementById("playBtn");
+      const audio = document.getElementById("myAudio");
+
+      let audioCtx, audioAnalyzer, isPlaying = false;
 
       function initAudio() {
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -166,52 +197,51 @@ nav a {
       function generateFractalPoints(freqData) {
         const points = [];
         const numPoints = 10;
-        const minSpeed = 0.11;
-        const maxSpeed = 0.84;
+        const minSpeed = 0.11, maxSpeed = 0.84;
+        const colors = ["#009688", "#4CAF50", "#8BC34A", "#CDDC39", "#0e1820", "#0f334d", "#0b5d85", "#b8b7c5", "#f0dde0"];
 
         for (let i = 0; i < numPoints; i++) {
           const x = Math.random() * canvas.width;
           const y = Math.random() * canvas.height;
-          const speedX = minSpeed + Math.random() * (maxSpeed - minSpeed);
-          const speedY = minSpeed + Math.random() * (maxSpeed - minSpeed);
-          const size = 5 + (freqData[Math.floor((x / canvas.width) * freqData.length)] / 15000) * 4000;
+          const freq = freqData[Math.floor((x / canvas.width) * freqData.length)];
+          const size = 5 + (freq / 15000) * 4000;
 
-          const colors = ["#009688", "#4CAF50", "#8BC34A", "#CDDC39", "#0e1820", "#0f334d", "#0b5d85", "#b8b7c5", "#f0dde0"];
-          const color = colors[Math.floor(Math.random() * colors.length)];
-
-          points.push({ x, y, speedX, speedY, size, color });
+          points.push({
+            x, y,
+            speedX: minSpeed + Math.random() * (maxSpeed - minSpeed),
+            speedY: minSpeed + Math.random() * (maxSpeed - minSpeed),
+            size,
+            color: colors[Math.floor(Math.random() * colors.length)],
+          });
         }
 
         return points;
       }
 
       function draw() {
-        if (!audioAnalyzer) return;
-
-        const freqData = audioAnalyzer.getData();
+        const freqData = audioAnalyzer.getFrequencyData();
         const points = generateFractalPoints(freqData);
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        const sphereRad = canvas.width / 8;
-        const projCenterX = canvas.width / 2;
-        const projCenterY = canvas.height / 2;
+        const sphereRadius = canvas.width / 8;
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
         const fLen = 320;
 
         for (const point of points) {
           const theta = Math.random() * 2 * Math.PI;
           const phi = Math.acos(Math.random() * 2 - 1);
-          const x0 = sphereRad * Math.sin(phi) * Math.cos(theta);
-          const y0 = sphereRad * Math.sin(phi) * Math.sin(theta);
-          const z0 = sphereRad * Math.cos(phi);
+          const x3d = sphereRadius * Math.sin(phi) * Math.cos(theta);
+          const y3d = sphereRadius * Math.sin(phi) * Math.sin(theta);
+          const z3d = sphereRadius * Math.cos(phi);
 
-          const m = fLen / (fLen - z0);
-          const projX = x0 * m + projCenterX;
-          const projY = y0 * m + projCenterY;
+          const m = fLen / (fLen - z3d);
+          const projX = x3d * m + centerX;
+          const projY = y3d * m + centerY;
 
           ctx.beginPath();
-          ctx.arc(projX, projY, point.size, 0, 2 * Math.PI);
-          ctx.closePath();
+          ctx.arc(projX, projY, point.size, 0, Math.PI * 2);
           ctx.fillStyle = point.color;
           ctx.fill();
         }
@@ -220,9 +250,7 @@ nav a {
       }
 
       playBtn.addEventListener("click", () => {
-        if (!audioCtx) {
-          initAudio();
-        }
+        if (!audioCtx) initAudio();
 
         if (isPlaying) {
           audio.pause();
@@ -236,7 +264,6 @@ nav a {
         isPlaying = !isPlaying;
       });
 
-      // Optional: preload analyzer on metadata load
       audio.addEventListener("loadedmetadata", () => {
         if (!audioCtx) initAudio();
       });

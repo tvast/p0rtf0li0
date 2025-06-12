@@ -1,0 +1,14 @@
+[debug] [2025-06-12T04:50:47.250Z] ----------------------------------------------------------------------
+[debug] [2025-06-12T04:50:47.251Z] Command:       /Users/doc/.nvm/versions/node/v20.15.1/bin/node /Users/doc/.nvm/versions/node/v20.15.1/bin/firebase deploy
+[debug] [2025-06-12T04:50:47.251Z] CLI Version:   13.15.4
+[debug] [2025-06-12T04:50:47.251Z] Platform:      darwin
+[debug] [2025-06-12T04:50:47.251Z] Node Version:  v20.15.1
+[debug] [2025-06-12T04:50:47.251Z] Time:          Thu Jun 12 2025 06:50:47 GMT+0200 (Central European Summer Time)
+[debug] [2025-06-12T04:50:47.251Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-12T04:50:47.282Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-12T04:50:47.283Z] > authorizing via signed-in user (theophile.vast@gmail.com)
+[debug] [2025-06-12T04:50:47.283Z] [iam] checking project p0rtf0li0-29e26 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-06-12T04:50:47.283Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/p0rtf0li0-29e26:testIamPermissions [none]
+[debug] [2025-06-12T04:50:47.283Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/p0rtf0li0-29e26:testIamPermissions x-goog-quota-user=projects/p0rtf0li0-29e26
+[debug] [2025-06-12T04:50:47.284Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/p0rtf0li0-29e26:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
