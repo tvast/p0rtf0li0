@@ -75,10 +75,10 @@
       pointer-events: none;
     }
 
-    .image-container:hover .art-image {
+    /* .image-container:hover .art-image {
       filter: brightness(70%) grayscale(30%) contrast(1.1);
       transform: scale(1.05);
-    }
+    } */
 
     .overlay-geometry {
       position: absolute;
@@ -90,6 +90,29 @@
       background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);
       mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
     }
+/* Full viewport wrapper for centering */
+#zoom-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: flex-start; /* aligns top */
+  overflow: hidden;
+}
+
+/* Scaled container */
+#image-scroll {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+  transform: scale(1.5);
+  transform-origin: top center;
+  /* Because of scale(1.5), set width and height to shrink accordingly */
+  width: calc(100vw * 2);
+  height: calc(100vh * 2);
+}
   </style>
 </head>
 <body>
@@ -107,7 +130,10 @@
     <p>Découvrez des œuvres uniques dans une expérience interactive et fluide. Utilisez le scroll vertical pour naviguer parmi les œuvres.</p>
   </section>
 
-  <main id="image-scroll"></main>
+
+  <div id="zoom-wrapper">
+    <main id="image-scroll"></main>
+  </div>
 
   <script>
     fetch('../data/gallery.json')

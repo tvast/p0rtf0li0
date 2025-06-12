@@ -67,7 +67,18 @@ const PORT = process.env.PORT || 7410;
 
 server.listen(PORT, () => {
   console.clear();
+
   startAsciiAnimation();
+
+  // Funky styled donut message
   funkyConsoleLog('🍩 Donuts are ready to serve! 🍩', ['pink', 'green']);
-  console.log(`Server running on http://localhost:${PORT}`);
+
+  // Stylish server running message
+  console.log(
+    `%cServer running on http://localhost:${PORT}`, 
+    'color: #00ff00; font-weight: bold; font-size: 16px; background: #222; padding: 4px 8px; border-radius: 4px;'
+  );
+
+  // Wait for DOM content to be loaded and log the audio element
+ 
 });
