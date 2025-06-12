@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>404 - Page Not Found</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+  /* Reset */
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    background: #0f0f19;
+    overflow: hidden;
+    font-family: 'Orbitron', monospace;
+    color: #00ffe7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* Particle canvas */
+  #particles {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 0;
+    background: #0f0f19;
+  }
+
+  /* Container */
+  #message {
+    position: relative;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px 60px;
+    border-radius: 12px;
+    box-shadow:
+      0 0 20px #00ffe7,
+      0 0 30px #00ffe7,
+      0 0 40px #00ffe7;
+    text-align: center;
+    max-width: 400px;
+    animation: fadeIn 1.5s ease forwards;
+  }
+
+  /* Neon flicker animation */
+  h2 {
+    font-size: 96px;
+    margin: 0 0 10px;
+    color: #00ffe7;
+    text-shadow:
+      0 0 5px #00ffe7,
+      0 0 10px #00ffe7,
+      0 0 20px #00ffe7,
+      0 0 40px #00ffe7,
+      0 0 80px #00ffe7,
+      0 0 90px #00ffe7;
+    animation: flicker 3s infinite;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin: 0 0 20px;
+    color: #00c6a7;
+    text-shadow: 0 0 5px #00c6a7;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #00ffe7cc;
+  }
+
+  /* Pulsing button */
+  a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 36px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #0f0f19;
+    background: #00ffe7;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow:
+      0 0 10px #00ffe7,
+      0 0 20px #00ffe7,
+      0 0 30px #00ffe7;
+    animation: pulse 2s infinite;
+    transition: background 0.3s ease;
+  }
+  a:hover {
+    background: #00c6a7;
+    box-shadow: 0 0 40px #00c6a7;
+  }
+
+  /* Animations */
+  @keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
+      text-shadow:
+        0 0 5px #00ffe7,
+        0 0 10px #00ffe7,
+        0 0 20px #00ffe7,
+        0 0 40px #00ffe7,
+        0 0 80px #00ffe7,
+        0 0 90px #00ffe7;
+    }
+    20%, 22%, 24%, 55% {
+      opacity: 0.5;
+      text-shadow: none;
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow:
+        0 0 10px #00ffe7,
+        0 0 20px #00ffe7,
+        0 0 30px #00ffe7;
+      transform: scale(1);
+    }
+    50% {
+      box-shadow:
+        0 0 30px #00ffe7,
+        0 0 40px #00ffe7,
+        0 0 50px #00ffe7;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<div id="message">
+  <h2>404</h2>
+  <h1>Page Not Found</h1>
+  <p>The specified file was not found on this website. Please check the URL for mistakes and try again.</p>
+  <a href="/">Go Home</a>
+</div>
+
+<script>
+  // Particle animation inspired by futuristic theme
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let particlesArray;
+
+  // Set canvas full screen
+  function initCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  initCanvas();
+  window.addEventListener('resize', () => {
+    initCanvas();
+  });
+
+  // Particle class
+  class Particle {
+    constructor(){
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 1;
+      this.speedX = (Math.random() - 0.5) * 0.5;
+      this.speedY = (Math.random() - 0.5) * 0.5;
+      this.color = `rgba(0, 255, 231, ${Math.random()})`;
+    }
+    update(){
+      this.x += this.speedX;
+      this.y += this.speedY;
+
+      // Wrap particles around edges
+      if(this.x > canvas.width) this.x = 0;
+      if(this.x < 0) this.x = canvas.width;
+      if(this.y > canvas.height) this.y = 0;
+      if(this.y < 0) this.y = canvas.height;
+    }
+    draw(){
+      ctx.shadowColor = this.color;
+      ctx.shadowBlur = 10;
+      ctx.fillStyle = this.color;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  // Initialize particles
+  function initParticles(){
+    particlesArray = [];
+    let count = 100;
+    for(let i = 0; i < count; i++){
+      particlesArray.push(new Particle());
+    }
+  }
+  initParticles();
+
+  // Animate particles
+  function animate(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particlesArray.forEach(particle => {
+      particle.update();
+      particle.draw();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+</script>
+
+</body>
+</html>

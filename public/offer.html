@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fullstack Specialist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Materialize CSS for grid and icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .card-image img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .foo2, .foo3 {
+      font-weight: 600;
+    }
+    .menu__list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+    .menu__item {
+      margin: 0 15px;
+    }
+    .menu__link {
+      text-decoration: none;
+      font-size: 18px;
+      color: #007bff;
+      font-weight: bold;
+    }
+    .menu__item--current .menu__link {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <nav style="display: flex; gap: 1rem; padding: 1rem; background: #222; color: white;">
+  <a href="index.html" style="color: white;">Index</a>
+  <a href="home.html" style="color: white;">Home</a>
+  <a href="offer.html" style="color: white;">Offer</a>
+  <a href="gallery.html" style="color: white;">Gallery</a>
+  <a href="hoopalong.html" style="color: white;">Hoopalong</a>
+</nav>
+
+  <!-- Desktop Cards Section -->
+  <div class="container hide-on-med-and-down">
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1576836165612-8bc9b07e7778">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Fullstack specialist, talk from robot to human</span>
+            <p>Discover my project on this website. I work with Node, Vue.js, ElasticSearch, MongoDB, Vanilla JS and more.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698">
+          </div>
+          <div class="card-content">
+            <span class="card-title">The best UI is made for humans</span>
+            <p>I follow Google Material Design principles on every project I work on.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea">
+          </div>
+          <div class="card-content">
+            <span class="card-title">I build websites that blow your mind</span>
+            <p>Just take a look at my portfolio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Info Section -->
+  <div class="hide-on-large-only">
+    <section class="section blue white-text center">
+      <h2 class="foo2">This website is optimized for desktop experience</h2>
+      <p>You can find some key information here</p>
+    </section>
+
+    <section class="section">
+      <h3 class="foo2 center">I tailor well crafted websites</h3>
+      <h5 class="foo2 center">with the best UX/UI</h5>
+
+      <div class="row">
+        <div class="col s12 m4 center">
+          <img src="https://img.icons8.com/nolan/64/web.png" />
+          <h5 class="foo2">Front end specialist</h5>
+        </div>
+        <div class="col s12 m4 center">
+          <img src="https://img.icons8.com/dusk/64/000000/developer.png" />
+          <h5 class="foo2">Fullstack experience</h5>
+        </div>
+        <div class="col s12 m4 center">
+          <img src="https://img.icons8.com/nolan/64/repository.png" />
+          <h5 class="foo2">Agile knowledge</h5>
+        </div>
+      </div>
+    </section>
+
+    <section class="section blue white-text center">
+      <h2 class="foo2">Go to my GitHub</h2>
+      <a class="btn white blue-text" href="https://github.com/tvast">Browse now</a>
+    </section>
+
+    <section class="section center">
+      <h2 class="foo2">Let's Get In Touch!</h2>
+      <p>Ready to start your next project with us? Email me and I’ll respond quickly.</p>
+      <a href="mailto:theophile.vast@gmail.com">Contact Théophile Vast</a>
+    </section>
+  </div>
+
+  <!-- Menu Section -->
+  <section class="section section--menu" id="Viola">
+    <div class="menu menu--viola center">
+      <ul class="menu__list">
+        <li class="menu__item menu__item--current"><a href="#" class="menu__link">Cours</a></li>
+        <li class="menu__item"><a href="./siteIFE/index.html" class="menu__link">Examen</a></li>
+        <li class="menu__item"><a href="./siteIFE/index.html" class="menu__link">Culture</a></li>
+        <li class="menu__item"><a href="./siteIFE/index.html" class="menu__link">Education</a></li>
+        <li class="menu__item"><a href="./siteIFE/index.html" class="menu__link">Mediathèque</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

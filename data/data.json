@@ -1,6 +1,6 @@
 {
   "gallery": {
-    "title": "Galerie Foldscroll d'art",
+    "title": "Elihpoeht ",
     "imageCount": 10,
     "imagePathTemplate": "./art/{index}.jpg",
     "items": [

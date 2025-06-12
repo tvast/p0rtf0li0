@@ -1,0 +1,424 @@
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+/* Parallax background sections */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.95;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgimg-1 {
+  background-image: url("");
+  min-height: 100%;
+  height: 500px;
+}
+.bgimg-2 {
+  min-height: 10%;
+  background-color: black;
+}
+.bgimg-3 {
+  background-image: url("#");
+  min-height: 100%;
+}
+
+/* Caption overlay */
+.caption {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  vertical-align: center;
+  color: black;
+  z-index: 100;
+}
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}
+
+/* Typography */
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+.element {
+  color: lime;
+  font-family: "Courier";
+  font-size: 22px;
+  margin: 10px 0 0 10px;
+  animation: type 4s steps(60, end);
+}
+.element2 {
+  color: lime;
+  font-family: "Courier";
+  font-size: 12px;
+}
+.typed-cursor {
+  opacity: 1;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Overlay menu */
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: #1b76a3;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+.overlay a:hover, .overlay a:focus {
+  color: #c6ff00;
+}
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+@media screen and (max-height: 450px) {
+  .overlay a { font-size: 20px; }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+/* Menu button */
+.menu {
+  font-size: 4em;
+  color: white;
+  position: absolute;
+  right: 0;
+}
+.menu:hover {
+  font-size: 5em;
+  color: grey;
+}
+
+/* General layout */
+body, html {
+  height: 100%;
+}
+.vuu {
+  float: right;
+}
+.logo {
+  font-family: "Merriweather";
+}
+nav {
+  position: fixed;
+  z-index: 30;
+}
+.tlt {
+  color: white;
+}
+
+/* Text gradient */
+.gradient {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#c6ff00, #1b76a3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.colorTOMATE {
+  color: tomato;
+}
+.bakcgroundBlue {
+  background-color: #ff324a;
+}
+
+/* Animated gradient background */
+.bg {
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(to bottom right, #92FE9D, #00C9FF, #a044ff, #e73827);
+  background-repeat: no-repeat;
+  background-size: 1000% 1000%;
+  animation: gradient 50s ease infinite;
+}
+@keyframes gradient {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+}
+
+/* Footer fonts */
+.foo, .foo2 {
+  font-family: 'Poiret One', cursive;
+  color: white;
+}
+.foo3 {
+  font-family: 'Poiret One', cursive;
+  color: #676767;
+}
+
+/* Gradient logo block */
+.bloc-logo {
+  position: relative;
+  width: 130px;
+  height: 49px;
+  float: left;
+}
+.bloc-logo canvas,
+.bloc-logo .logo-mask {
+  display: block;
+  width: 130px;
+  height: 49px;
+}
+.bloc-logo .logo-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 130px;
+  background-image: url("Minmatar_logo.png");
+  text-indent: -9999px;
+}
+
+/* Particles.js counters and container */
+.count-particles {
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13E8E9;
+  font-size: 0.8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+.js-count-particles {
+  font-size: 1.1em;
+}
+#stats,
+.count-particles {
+  user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+.count-particles {
+  border-radius: 0 0 3px 3px;
+}
+#particles-js {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+}
+
+/* Canvas container */
+#container {
+  position: relative;
+}
+#container canvas, #overlay {
+  position: absolute;
+}
+
+/* Fallback: disable parallax on mobile */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+
+/* Webkit animation example */
+@-webkit-keyframes myfirst {
+  0% { margin-left: -235px; }
+  90%, 100% { margin-left: 100%; }
+}
+@keyframes myfirst {
+  0% { margin-left: -235px; }
+  70%, 100% { margin-left: 100%; }
+}
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.title {
+  font-family: "Raleway";
+  font-size: 24px;
+  font-weight: 700;
+  color: #5d4037;
+  text-align: center;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+h1 + p,
+p + p {
+  margin-top: 10px;
+}
+
+.container {
+  padding: 40px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-wrap {
+  margin: 10px;
+  transform: perspective(800px);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card-wrap:hover .card-info {
+  transform: translateY(0);
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-wrap:hover .card-info p {
+  opacity: 1;
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-wrap:hover .card-info::after {
+  transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-wrap:hover .card-bg {
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0.8;
+}
+
+.card-wrap:hover .card {
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: rgba(255, 255, 255, 0.2) 0 0 40px 5px, 
+              rgba(255, 255, 255, 1) 0 0 0 1px, 
+              rgba(0, 0, 0, 0.66) 0 30px 60px 0, 
+              inset #333 0 0 0 5px, 
+              inset white 0 0 0 6px;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 240px;
+  width: 240px;
+  height: 320px;
+  background-color: #333;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, 
+              inset #333 0 0 0 5px, 
+              inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.card-bg {
+  opacity: 0.5;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95), 
+              opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  pointer-events: none;
+}
+
+.card-info {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  transform: translateY(40%);
+  transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.card-info p {
+  opacity: 0;
+  text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
+  transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.card-info * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-info::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+  background-blend-mode: overlay;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.card-info h1 {
+  font-family: "Playfair Display";
+  font-size: 36px;
+  font-weight: 700;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
+}

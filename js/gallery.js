@@ -12,7 +12,7 @@ const files = fs.readdirSync(artFolder).filter(file =>
 // Build the JSON structure
 const galleryJson = {
   gallery: {
-    title: "Galerie Foldscroll d'art",
+    title: "Elihpoeht",
     imageCount: files.length,
     imagePathTemplate: "art/{index}.jpeg",
     items: files.map((file, i) => {

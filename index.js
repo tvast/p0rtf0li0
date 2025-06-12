@@ -46,7 +46,20 @@ app.get('/firebase-config', (req, res) => {
     appId: process.env.FIREBASE_APP_ID,
   });
 });
+import fs from 'fs';
 
+app.get('/api/art', (req, res) => {
+  const artDir = path.join(__dirname, 'art');
+  fs.readdir(artDir, (err, files) => {
+    if (err) {
+      console.error('Error reading art directory:', err);
+      return res.status(500).json({ error: 'Unable to read art directory' });
+    }
+    const images = files.filter(file => file.match(/\.(jpg|jpeg|png|gif)$/i));
+    res.json(images);
+  });
+});
+app.use('/art', express.static(path.join(__dirname, 'art')));
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
